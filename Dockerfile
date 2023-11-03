@@ -5,6 +5,9 @@ FROM kivy/buildozer:latest
 # This is needed to install version specified by user
 RUN pip3 uninstall -y buildozer
 
+
+USER Root
+
 # Install required packages
 RUN apt-get update && apt-get install -y gettext autopoint 
     
