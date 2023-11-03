@@ -5,6 +5,8 @@ FROM kivy/buildozer:latest
 # This is needed to install version specified by user
 RUN pip3 uninstall -y buildozer
 
+RUN sudo apt-get install gettext autopoint
+
 # Remove a lot of warnings
 # sudo: setrlimit(RLIMIT_CORE): Operation not permitted
 # See https://github.com/sudo-project/sudo/issues/42
