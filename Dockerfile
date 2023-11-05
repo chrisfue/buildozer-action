@@ -6,9 +6,14 @@ FROM kivy/buildozer:latest
 RUN pip3 uninstall -y buildozer
 
 
-# tell user for dockerbuild
-RUN whoami
-    
+# Switch to root to install packages
+USER root
+
+# Install packages
+RUN apt-get update && apt-get install -y gettext autopoint
+
+# Optional: Switch back to the non-root user after installing packages for security
+USER user  
     
 # Remove a lot of warnings
 # sudo: setrlimit(RLIMIT_CORE): Operation not permitted
