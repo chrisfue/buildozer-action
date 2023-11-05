@@ -7,7 +7,7 @@ RUN pip3 uninstall -y buildozer
 
 
 # tell user for dockerbuild
-RUN echo "$USER"
+RUN whoami
     
     
 # Remove a lot of warnings
