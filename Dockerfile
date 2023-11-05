@@ -6,8 +6,8 @@ FROM kivy/buildozer:latest
 RUN pip3 uninstall -y buildozer
 
 
-# Install required packages
-RUN apt-get update && apt-get install -y gettext autopoint 
+# tell user for dockerbuild
+RUN echo "$USER"
     
     
 # Remove a lot of warnings
