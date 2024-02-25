@@ -11,7 +11,9 @@ USER root
 
 # Install packages
 RUN apt-get update && apt-get install -y gettext autopoint
-RUN pip install ffpyplayer
+RUN apt install ffmpeg libavcodec-dev libavdevice-dev libavfilter-dev libavformat-dev \
+libavutil-dev libswscale-dev libswresample-dev libpostproc-dev libsdl2-dev libsdl2-2.0-0 \
+libsdl2-mixer-2.0-0 libsdl2-mixer-dev python3-dev
 
 # Optional: Switch back to the non-root user after installing packages for security
 USER user  
