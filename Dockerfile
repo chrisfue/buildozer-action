@@ -11,13 +11,13 @@ USER root
 
 # Install packages
 RUN apt-get update && apt-get install -y gettext autopoint
-RUN apt install ffmpeg libavcodec-dev libavdevice-dev libavfilter-dev libavformat-dev \
-libavutil-dev libswscale-dev libswresample-dev libpostproc-dev libsdl2-dev libsdl2-2.0-0 \
-libsdl2-mixer-2.0-0 libsdl2-mixer-dev python3-dev
+RUN sudp apt install ffmpeg libavcodec-dev libavdevice-dev libavfilter-dev libavformat-dev \
+    libavutil-dev libswscale-dev libswresample-dev libpostproc-dev libsdl2-dev libsdl2-2.0-0 \
+    libsdl2-mixer-2.0-0 libsdl2-mixer-dev python3-dev
 
 # Optional: Switch back to the non-root user after installing packages for security
 USER user  
-    
+
 # Remove a lot of warnings
 # sudo: setrlimit(RLIMIT_CORE): Operation not permitted
 # See https://github.com/sudo-project/sudo/issues/42
