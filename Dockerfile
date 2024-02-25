@@ -11,6 +11,7 @@ USER root
 
 # Install packages
 RUN apt-get update && apt-get install -y gettext autopoint
+RUN pip install Cython==0.29.36
 RUN apt update && apt install -y \
     ffmpeg \
     libavcodec-dev \
