@@ -11,9 +11,26 @@ USER root
 
 # Install packages
 RUN apt-get update && apt-get install -y gettext autopoint
-RUN sudp apt install ffmpeg libavcodec-dev libavdevice-dev libavfilter-dev libavformat-dev \
-    libavutil-dev libswscale-dev libswresample-dev libpostproc-dev libsdl2-dev libsdl2-2.0-0 \
-    libsdl2-mixer-2.0-0 libsdl2-mixer-dev python3-dev
+RUN apt update && apt install -y \
+    ffmpeg \
+    libavcodec-dev \
+    libavdevice-dev \
+    libavfilter-dev \
+    libavformat-dev \
+    libavutil-dev
+
+RUN apt install -y \
+    libswscale-dev \
+    libswresample-dev \
+    libpostproc-dev
+
+RUN apt install -y \
+    libsdl2-dev \
+    libsdl2-2.0-0 \
+    libsdl2-mixer-2.0-0 \
+    libsdl2-mixer-dev \
+    python3-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 # Optional: Switch back to the non-root user after installing packages for security
 USER user  
