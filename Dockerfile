@@ -11,10 +11,11 @@ USER root
 
 # Install packages
 RUN apt-get update && apt-get install -y gettext autopoint
+RUN pip install ffpyplayer
 
 # Optional: Switch back to the non-root user after installing packages for security
 USER user  
-    
+
 # Remove a lot of warnings
 # sudo: setrlimit(RLIMIT_CORE): Operation not permitted
 # See https://github.com/sudo-project/sudo/issues/42
